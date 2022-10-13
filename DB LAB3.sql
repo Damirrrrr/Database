@@ -49,12 +49,12 @@ create table students(
     info text,
     need_for_a_Dorm bool,
     additional_info text,
-    primary key (full_name, birth_year)
+    primary key (full_name)
 );
 ---b)
 create table instructors(
     full_name varchar(50),
-    speaking_languages varchar[],
+    speaking_languages text,
     work_experience integer,
     remote_lessons boolean,
     primary key (full_name)
@@ -63,14 +63,18 @@ create table instructors(
 create table lesson_participants(
     lesson_title varchar,
     teaching_instructor varchar(50),
-    students text[],
+    students text,
     room_number integer,
-    foreign key (teaching_instructor) references instructors
+    foreign key (teaching_instructor) references instructors,
+    foreign key (students) references students
 );
 ---№4
-insert into customer values ( 77,'Damir', current_timestamp,'ST Alatau');
+insert into customer
+values ( 77,'Damir', current_timestamp,'ST Alatau');
+
 update customer
 set delivery_address = 'ST Kok-Sai 55'
 where id = 77;
+
 delete from customer
 where id = 77;
