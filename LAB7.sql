@@ -63,7 +63,7 @@ $$
             SELECT next_num, prev_num;
     END;
 $$;
-
+---2)
 ---3)
 --a
 CREATE OR REPLACE PROCEDURE increasing(year int, salary int, out salary1 int, out discount int)
